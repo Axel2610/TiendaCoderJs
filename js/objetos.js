@@ -62,7 +62,7 @@ if (eleccion == "SAMSUNG") {
     document.getElementById("textoNovedad").innerHTML = "El Samsung Galaxy A52 es la variante LTE del sucesor del Galaxy A51. Con una pantalla Super AMOLED de 6.5 pulgadas, el Galaxy A52 está potenciado por un procesador Snapdragon 720G con opciones de 4GB, 6GB o 8GB de memoria RAM y 128GB o 256GB de almacenamiento interno.";
     document.getElementById("textoNovedad2").innerHTML = "El Samsung Galaxy A72 llega para suceder al Galaxy A70 con una pantalla Super AMOLED de 6.7 pulgadas a resolución FHD+. Utilizando un procesador Snapdragon 730 de ocho núcleos, el Galaxy A71 cuenta con variantes de 6GB o 8GB de memoria RAM con 128GB de espacio de almacenamiento interno expandible microSD.";
     document.getElementById("imagenNovedad").src = "./img/galaxy-a52.png";
-    document.getElementById("imagenNovedad2").src = "./img/galaxy-A72.png";
+    document.getElementById("imagenNovedad2").src = "./img/galaxyInicio.png";
     console.log(celular1);
     console.log(celular2);    
 } else if (eleccion == "MOTO") {
