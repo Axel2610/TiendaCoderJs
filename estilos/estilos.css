@@ -21,6 +21,11 @@
     font-size: 1.5rem;
 }
 
+.carritoCompras{
+    width: 50px;
+    height: auto;
+}
+
 .informacion{
     display: grid;
     margin: 10px;
