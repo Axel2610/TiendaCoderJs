@@ -1,4 +1,4 @@
-class Celular {
+class CelularModelo {
     constructor(marca, modelo, pantalla, procesador, ram, almacenamiento, bateria, precio) {
         this.marca = marca;
         this.modelo = modelo;
@@ -20,13 +20,18 @@ class Celular {
     }
 }
 
-const celular1 = new Celular("Samsung", "A52", "6.5", "Snapdragon 720", "6gb", "128gb", "4500mah", 47000);
-const celular2 = new Celular("Samsung", "A71", "6.7", "Snapdragon 730", "8gb", "128gb", "4500mah", 52000);
-const celular3 = new Celular("Motorola", "G50", "6.5", "Mediatek 700", "4gb", "128gb", "5000mah", 39500);
-const celular4 = new Celular("Motorola", "G60s", "6.3", "Snapdragon 665", "4gb", "64gb", "4000mah", 48500);
-const celular5 = new Celular("Xiaomi", "Redmi 10", "6.5", "Mediatek G88", "4gb", "64gb", "5000mah", 34000);
-const celular6 = new Celular("Xiaomi", "Redmi Note 9", "6.53", "Mediatek G85", "3gb", "64gb", "5020mah", 38000);
+const celular1 = new CelularModelo("Samsung", "A52", "6.5", "Snapdragon 720", "6gb", "128gb", "4500mah", 47000);
+const celular2 = new CelularModelo("Samsung", "A71", "6.7", "Snapdragon 730", "8gb", "128gb", "4500mah", 52000);
+const celular3 = new CelularModelo("Motorola", "G50", "6.5", "Mediatek 700", "4gb", "128gb", "5000mah", 39500);
+const celular4 = new CelularModelo("Motorola", "G60s", "6.3", "Snapdragon 665", "4gb", "64gb", "4000mah", 48500);
+const celular5 = new CelularModelo("Xiaomi", "Redmi 10", "6.5", "Mediatek G88", "4gb", "64gb", "5000mah", 34000);
+const celular6 = new CelularModelo("Xiaomi", "Redmi Note 9", "6.53", "Mediatek G85", "3gb", "64gb", "5020mah", 38000);
 
+let CelularesModelo = [celular1,celular2,celular3,celular4,celular5,celular6];
+
+const guardar = (clave, valor) => { localStorage.setItem(clave, valor) };
+
+guardar("listaModelo", JSON.stringify(CelularesModelo));
 
 const precioCelulares = [{marca:"Samsung", modelo: "A52", precio: 47000 }, {marca:"Samsung", modelo: "A72", precio: 52000 }, {marca:"Moto", modelo: "G50", precio: 39500 },
 {marca:"Moto", modelo: "G60", precio: 48500 }, {marca:"Xiaomi", modelo: "Redmi 10", precio: 34000 }, {marca:"Xiaomi", modelo: "Redmi Note 9", precio: 38000 }];
@@ -47,7 +52,7 @@ function respuestaClickSamsung(){
     document.getElementById("textoNovedad2").innerHTML = "El Samsung Galaxy A72 llega para suceder al Galaxy A70 con una pantalla Super AMOLED de 6.7 pulgadas a resolución FHD+. Utilizando un procesador Snapdragon 730 de ocho núcleos, el Galaxy A71 cuenta con variantes de 6GB o 8GB de memoria RAM con 128GB de espacio de almacenamiento interno expandible microSD.";
     document.getElementById("imagenNovedad").src = "./img/galaxy-a52.png";
     document.getElementById("imagenNovedad2").src = "./img/galaxyInicio.png";
-    document.getElementById("preciosCelulares").innerHTML = encontrarSamsung;
+    // document.getElementById("preciosCelulares").innerHTML = encontrarSamsung;
 }
 
 
@@ -57,7 +62,7 @@ function respuestaClickMoto(){
     document.getElementById("textoNovedad2").innerHTML = "Con una pantalla de 6.8 pulgadas FHD+ con tasa de refresco de 120 Hz, el Moto G60 está potenciado por un procesador Qualcomm Snapdragon 732G con 6GB de RAM y 128GB de almacenamiento interno. La cámara triple posterior tiene un lente principal de 108 MP y secundarios de 8 MP y 2MP, y su cámara selfie es de 32 MP.";
     document.getElementById("imagenNovedad").src = "./img/motog50.png";
     document.getElementById("imagenNovedad2").src = "./img/motog60s.png";
-    document.getElementById("preciosCelulares").innerHTML = encontrarMoto;
+    // document.getElementById("preciosCelulares").innerHTML = encontrarMoto;
 }
 
 botonXiaomi.addEventListener("click", respuestaClickXiaomi)
@@ -66,32 +71,8 @@ function respuestaClickXiaomi(){
     document.getElementById("textoNovedad2").innerHTML = "El Xiaomi Redmi Note 9 es un smartphone Android con una pantalla Full HD+ de 6.53 pulgadas y potenciado por un procesador Mediatek Helio G85, acompañado de variantes de 3GB de memoria RAM con 64GB de espacio de almacenamiento interno o 4GB de RAM con 128GB de almacenamiento.";
     document.getElementById("imagenNovedad").src = "./img/redmi10.png";
     document.getElementById("imagenNovedad2").src = "./img/Redmi-Note-9.png";
-    document.getElementById("preciosCelulares").innerHTML = encontrarXiaomi;
+    // document.getElementById("preciosCelulares").innerHTML = encontrarXiaomi;
 }
 
 
-
-
-
-
-
-// const modeloCelulares = [{ marca: "Samsung", modelo: "A52" }, { marca: "Samsung", modelo: "A71" }, { marca: "Motorola", modelo: "G50" },
-// { marca: "Motorola", modelo: "G8 Plus" }, { marca: "Xiaomi", modelo: "Redmi 10" }, { marca: "Xiaomi", modelo: "Redmi Note 9" }];
-
-// console.log(modeloCelulares);
-
-
-// console.log(precioCelulares);
-
-// const soloPrecios = [47000, 52000, 39500, 27500, 34000, 38000];
-
-// const preciosOrdenados = soloPrecios.sort((a, b) => a - b);
-
-// console.log(preciosOrdenados);
-
-// celular1.sumaIva(), celular1.doceCuotas();
-// celular2.sumaIva(), celular2.doceCuotas();
-// celular3.sumaIva(), celular3.doceCuotas();
-// celular4.sumaIva(), celular4.doceCuotas();
-// celular5.sumaIva(), celular5.doceCuotas();
-// celular6.sumaIva(), celular6.doceCuotas();
+let listaProductos = JSON.parse(localStorage.getItem('listaProductos'));
