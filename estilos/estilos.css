@@ -47,6 +47,7 @@
 .logosMarcas{
     width: 10vw;
     height: auto;
+    cursor: pointer;
 }
 
 video{
@@ -66,18 +67,8 @@ video{
     width: 40vw;
     height: auto;
 }
-
-/* productos */
-
-.bannersCelu{
-    width: 100%;
-}
-
-
-/* contacto */
-
-.logosForm{
-    font-size: 2.5rem;
+.letraCard-Productos{
+    font-family: 'Glory', sans-serif;
 }
 
 @media (max-width: 500px) {
@@ -98,10 +89,5 @@ video{
     .logosMarcas{
         width: 30vw;
         height: auto;
-    }
-    
-
-    .logosForm{
-        font-size: 1.5rem;
     }
 }
