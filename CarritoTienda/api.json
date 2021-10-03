@@ -15,7 +15,7 @@
       "precio": 29000,
       "id": 3,
       "title": "Moto G20",
-      "img": "../img/motoG20.png"
+      "img": "../img/motog20.png"
     },
     {
       "precio": 67000,
@@ -51,7 +51,7 @@
       "precio": 65000,
       "id": 9,
       "title": "Redmi Mi 10 T Lite",
-      "img": "../img/mi10Tlite.jpg"
+      "img": "../img/mi10tlite.jpg"
     },
     {
       "precio": 170000,
@@ -69,7 +69,7 @@
       "precio": 140000,
       "id": 12,
       "title": "iPhone X",
-      "img": "../img/iPhone-X.jpg"
+      "img": "../img/Iphone-X.jpg"
     }
 
 ]
