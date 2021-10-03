@@ -10,6 +10,9 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="js/jquery.3.6.0-min.js"></script>
+    <link rel="stylesheet" href="estilos/estilosLogosRedes.css">
+    <script src="https://kit.fontawesome.com/4b37abc33e.js" crossorigin="anonymous"></script>
     <title>Contacto</title>
 </head>
 
@@ -30,13 +33,10 @@
                                 <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="productos.html">Productos</a>
+                                <a class="nav-link" href="CarritoTienda/tienda.html">Tienda</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
-                            </li>
-                            <li class="nav-item">
-                                <img src="img/carrito-de-compras.png" alt="carrito" class="carritoCompras">
                             </li>
                         </ul>
                     </div>
@@ -48,34 +48,35 @@
         <br>
         <main>
             <form>
-                <div class="row mb-3">
+                <div class="row mb-3" id="divAgregado"></div>
+                <div class="row mb-3" id="emailDiv">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3">
+                        <input type="email" class="form-control" id="inputEmail3"
+                            placeholder="Ingrese su correo electronico">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="Consulta" class="form-label">Consulta</label>
-                    <textarea class="form-control" id="Consulta" rows="8"></textarea>
+                    <label for="consulta" class="form-label">Consulta</label>
+                    <textarea class="form-control" id="consulta" rows="8" placeholder="Ingrese su consulta"></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark">Enviar</button>
+
+
             </form>
             <br>
             <br>
-            <br>
-            <div class="container-fluid row logosForm">
-                <div class="col-lg-4">
-                    <p><i class="fab fa-whatsapp"></i> +54 9 222 2 222222</p>
-                </div>
-                <div class="col-lg-4">
-                    <p><i class="fab fa-instagram"></i> @SMARTPHONES</p>
-                </div>
-                <div class="col-lg-4">
-                    <p><i class="fab fa-facebook"></i> SMARTPHONES</p>
-                </div>
+
+        <footer>
+            <div class="contenedorLogoRedes">
+              <a href="#" class="icon-button twitter"><i class="icon-twitter fab fa-twitter"></i><span></span></a>
+              <a href="#" class="icon-button facebook"><i class="icon-facebook fab fa-facebook"></i><span></span></a>
+              <a href="#" class="icon-button instagram"><i class="fab fa-instagram"></i><span></span></a>
+              <a href="#" class="icon-button youtube"><i class="fa fa-youtube"></i><span></span></a>
+              <a href="#" class="icon-button whatsapp"><i class="fab fa-whatsapp"></i><span></span></a>
             </div>
-        </main>
-        <footer></footer>
+          </footer>
+
 
     </div>
     <!-- bootstrap1 -->
@@ -90,6 +91,7 @@
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
     </script>
 
+    <script src="js/contacto.js"></script>
 </body>
 
 </html>
