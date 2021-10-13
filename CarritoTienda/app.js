@@ -5,6 +5,7 @@ const templateCard = document.getElementById("template-card").content
 const templateFooter = document.getElementById("template-footer").content
 const templateCarrito = document.getElementById("template-carrito").content
 const fragment = document.createDocumentFragment()
+const compraRealizada = document.getElementById("compraRealizada")
 let carrito = {}
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -52,6 +53,7 @@ const addCarrito = e => {
     // console.log(e.target.classList.contains("btn"))
     if(e.target.classList.contains("btn")){
         setCarrito(e.target.parentElement)
+        compraRealizada.innerText = "";
     }
     e.stopPropagation()
 }
@@ -118,6 +120,17 @@ const pintarFooter = () =>{
     fragment.appendChild(clone)
 
     footer.appendChild(fragment)
+
+    const compraCorrecta = ()=>{
+       compraRealizada.innerHTML =`<div class="alert alert-success" role="alert"> Compra Realizada Correctamente!</div>`
+    }
+
+    const btnComprar = document.getElementById("boton-comprar")
+    btnComprar.addEventListener("click",()=>{
+        compraCorrecta()
+        carrito ={}
+        pintarCarrito()
+    })
 
 
     const btnVaciar = document.getElementById("vaciar-carrito")
