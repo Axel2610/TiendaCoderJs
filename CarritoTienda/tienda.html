@@ -111,6 +111,23 @@
             </div>
           </div>
         </template>
+
+
+        <br>
+        <div class="row">
+          <h3 class="text-center">Conversor</h2>
+          <div class="contenedorPesos col-6 text-center">
+              <label><img src="../img/argentina.png" alt="argentina" class="bandera-arg"></label>
+              <input id="inputPesos" type="number" placeholder="Pesos" oninput="pesosDolares(this.value)"
+                  onchange="pesosDolares(this.value)">
+          </div>
+          <div class="contenedorDolares col-6 text-center">
+              <label><img src="../img/eeuu.png" alt="eeuu" class="bandera-eeuu"></label>
+              <input id="inputDolares" type="number" placeholder="Dolares" oninput="dolaresPesos(this.value)"
+                  onchange="dolaresPesos(this.value)">
+          </div>
+      </div>
+  
       </main>
 
       <footer>
