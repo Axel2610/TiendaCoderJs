@@ -27,7 +27,7 @@ const fetchData = async () => {
     try{
         const res = await fetch("api.json")
         const data = await res.json()
-        // console.log(data)
+        
         pintarCards(data)
     } catch (error) {
         console.log(error)
@@ -35,7 +35,7 @@ const fetchData = async () => {
 }
 
 const pintarCards = data => {
-    // console.log(data)
+
     data.forEach(producto =>{
         templateCard.querySelector("h5").textContent = producto.title
         templateCard.querySelector("p").textContent = producto.precio
@@ -49,8 +49,7 @@ const pintarCards = data => {
 } 
 
 const addCarrito = e => {
-    // console.log(e.target)
-    // console.log(e.target.classList.contains("btn"))
+   
     if(e.target.classList.contains("btn")){
         setCarrito(e.target.parentElement)
         compraRealizada.innerText = "";
@@ -59,7 +58,6 @@ const addCarrito = e => {
 }
 
 const setCarrito = objeto => {
-    // console.log(objeto)
     const producto = {
         id: objeto.querySelector(".btn").dataset.id,
         title: objeto.querySelector("h5").textContent,
@@ -79,7 +77,6 @@ const setCarrito = objeto => {
 }
 
 const pintarCarrito = () => {
-    // console.log(carrito)
     items.innerHTML = ""
     Object.values(carrito).forEach(producto => {
         templateCarrito.querySelector("th").textContent = producto.id
@@ -94,12 +91,12 @@ const pintarCarrito = () => {
     items.appendChild(fragment)
 
 
-    pintarFooter()
+    pintarCompra()
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
-const pintarFooter = () =>{
+const pintarCompra = () =>{
     footer.innerHTML = ""
     if(Object.keys(carrito).length === 0) {
         footer.innerHTML = `
@@ -121,9 +118,15 @@ const pintarFooter = () =>{
 
     footer.appendChild(fragment)
 
+ 
+
+   // Botones Comprar o Vaciar
+
+
     const compraCorrecta = ()=>{
        compraRealizada.innerHTML =`<div class="alert alert-success" role="alert"> Compra Realizada Correctamente!</div>`
     }
+
 
     const btnComprar = document.getElementById("boton-comprar")
     btnComprar.addEventListener("click",()=>{
@@ -140,12 +143,13 @@ const pintarFooter = () =>{
     })
 }
 
+// Botones Agregar o Eliminar
+
 
 const btnAccion = e => {
-    // console.log(e.target)
     if (e.target.classList.contains("btn-info")){
         console.log(carrito[e.target.dataset.id])
-        // carrito[e.target.dataset.id]
+
        const producto = carrito[e.target.dataset.id]
         producto.cantidad++
         carrito [e.target.dataset.id] = {...producto}
@@ -161,3 +165,14 @@ const btnAccion = e => {
         pintarCarrito()
     }
 }
+
+
+// Conversor de moneda
+
+
+function pesosDolares(valNum) {
+    document.getElementById("inputDolares").value=(valNum/188).toFixed(2);
+  }
+  function dolaresPesos(valNum) {
+    document.getElementById("inputPesos").value=valNum*188;
+  }
